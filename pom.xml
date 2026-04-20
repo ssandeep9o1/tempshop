@@ -74,6 +74,30 @@
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+
+<!--		sathwik chages-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mapstruct</groupId>
+			<artifactId>mapstruct</artifactId>
+			<version>1.5.5.Final</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok-mapstruct-binding</artifactId>
+			<version>0.2.0</version>
+			<scope>compile</scope>
+		</dependency>
+
+<!--		sathwik chages-->
 	</dependencies>
 
 	<build>
@@ -106,9 +130,17 @@
 									<groupId>org.springframework.boot</groupId>
 									<artifactId>spring-boot-configuration-processor</artifactId>
 								</path>
+								<!--		sathwik chages-->
+								<path>
+									<groupId>org.mapstruct</groupId>
+									<artifactId>mapstruct-processor</artifactId>
+									<version>1.5.5.Final</version>
+								</path>
+								<!--		sathwik chages-->
 								<path>
 									<groupId>org.projectlombok</groupId>
-									<artifactId>lombok</artifactId>
+									<artifactId>lombok-mapstruct-binding</artifactId>
+									<version>0.2.0</version>
 								</path>
 							</annotationProcessorPaths>
 						</configuration>
