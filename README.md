@@ -13,4 +13,4 @@ The QR-based shopping system is designed using a normalized relational schema co
 
 ### Entity Relationship Diagram
 
-![TempShop ER Diagram](docs/tempshop_ERD.png)
+![TempShop ER Diagram](docs/tempshop_ER.png)
