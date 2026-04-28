@@ -4,13 +4,16 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-
+@Entity
 @Getter
 @Setter
-@Entity
-public class Category {
+public class Qr {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String category_type;
+    private Long qr_id;
+    private String qr_image;
+
+    @OneToOne
+    @JoinColumn(name = "admin_id")
+    private Admin admin;
 }
