@@ -1,16 +1,21 @@
 package org.example.tempshop.entity;
 
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-
+@Entity
 @Getter
 @Setter
-@Entity
-public class Category {
+public class Payments {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String category_type;
+    private Long payment_id;
+
+    @OneToOne
+    @JoinColumn(name = "order_id")
+    private Orders order;
+
+    private String payment_type;
 }

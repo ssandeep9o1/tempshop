@@ -7,13 +7,18 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Menu {
+public class Items {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String item;
-    private int price;
-    private String availability;
+    private Long item_id;
+    private String item_name;
+    private int stocks;
+    private double price;
+    private boolean availability;
+
+    @ManyToOne
+    @JoinColumn(name = "admin_id")
+    private Admin admin;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
