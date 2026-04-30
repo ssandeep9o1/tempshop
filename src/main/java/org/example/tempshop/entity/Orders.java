@@ -10,22 +10,21 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-public class Orders {
+public class Orders extends BaseModel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long order_id;
     private Long token;
     private double total;
-    private int order_quantity;
 
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
 
     @ManyToOne
-    @JoinColumn(name = "admin_id")
-    private Admin admin;
+    @JoinColumn(name = "owner_id")
+    private Owner owner;
 
-    @OneToMany(mappedBy="order")
+    @OneToMany(mappedBy="order", cascade = CascadeType.ALL)
     private List<OrderItems> items;
 
 }

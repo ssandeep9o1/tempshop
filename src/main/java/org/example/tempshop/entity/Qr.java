@@ -14,6 +14,6 @@ public class Qr {
     private String qr_image;
 
     @OneToOne
-    @JoinColumn(name = "admin_id")
-    private Admin admin;
+    @JoinColumn(name = "owner_id")
+    private Owner owner;
 }

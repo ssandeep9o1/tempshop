@@ -9,19 +9,19 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-public class Admin {
+public class Owner {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long admin_id;//shop owner.
+    private Long owner_id;//shop owner.
     private String name;
     private String contact;
     private String shopName;
     private String address;
     private String image;
 
-    @OneToOne(mappedBy = "admin", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "owner", cascade = CascadeType.ALL)
     private Qr qr;
 
-    @OneToMany(mappedBy = "admin")
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
     private List<Items> items;
 }

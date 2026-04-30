@@ -8,7 +8,7 @@ import org.example.tempshop.enums.PaymentStatus;
 @Entity
 @Getter
 @Setter
-public class Transactions {
+public class Transactions extends BaseModel{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long transaction_id;

@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.Setter;
 import org.example.tempshop.enums.ItemSize;
 
+import java.math.BigDecimal;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -16,9 +19,12 @@ public class ItemsSize {
     @Enumerated(EnumType.STRING)
     private ItemSize size;
 
-    private double price_per_size;
+    private BigDecimal price_per_size;
 
     @ManyToOne
     @JoinColumn(name = "item_id")
     private Items items;
+
+    @OneToMany(mappedBy = "itemsSize")
+    private List<OrderItems> orderItems;
 }
